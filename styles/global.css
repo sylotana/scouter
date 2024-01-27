@@ -1,9 +1,20 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --duration: 0.3236s;
+  --link-hover: #e6e6e6;
+}
+
 .page__body {
   margin: 0;
   font-family: 'Inter', 'Arial', 'Helvetica', sans-serif;
   font-weight: 400;
   font-style: normal;
-  background-color: #f4f4f0;
+  background-color: #f2f2f2;
   font-size: 1.125rem;
 }
 
@@ -12,13 +23,28 @@
 }
 
 
+.visually-hidden {
+  position: absolute; /* элемент вырывают из потока */
+  
+  /* делают элемент очень маленьким, но таким, чтобы не пропал совсем */
+  inline-size: 1px; /* width */
+  block-size: 1px; /* height */
+
+  margin: -1px; /* элемент убирают из поля зрения, сдвинув на размер самого себя */
+  padding: 0; /* обнуляют отступы, они есть у некоторых элементов по умолчанию */
+  border: 0; /* убирают границу, она тоже может быть у каких-то элементов */
+  clip: rect(0 0 0 0); /* это свойство обрезает видимую область до нулевого значения */
+  overflow: hidden; /* на всякий случай скрывают видимое за пределами блока */
+} 
+
+
 
 /*------------------------------------*\
   #HEADER
 \*------------------------------------*/
 
 .header {
-  margin-top: 12px;
+  margin-block-start: 12px; /* margin-top */
 }
 
   .header__container {
@@ -34,7 +60,14 @@
 
   .header__logo {
     display: flex;
-    margin-right: 96px;
+    margin-inline-end: 96px; /* margin-right */
+    border-radius: 16px;
+    padding: 12px;
+    transition: background-color .1618s ease;
+  }
+
+  .header__logo:hover {
+    background-color: #e6e6e6;
   }
 
 
@@ -66,10 +99,11 @@
       background-color: transparent;
       border-radius: 16px;
       transition: background-color .1618s ease;
+      white-space: nowrap;
     }
 
     .header__nav-link:hover {
-      background-color: #ebeae2;
+      background-color: #e6e6e6;
     }
 
 
@@ -77,7 +111,7 @@
   /* HEADER__SEARCH */
 
     .header__search {
-      margin-left: auto;
+      margin-inline-start: auto; /* margin-left */
     }
 
       .header__search-label {
@@ -92,26 +126,34 @@
 
       .header__search-icon {
         position: absolute;
-        left: 12px;
+        inset-inline-start: 12px; /* left */
       }
 
 
       .header__search-input {
         padding-block: 12px;
         padding-inline: 44px 24px;
-        min-width: 420px;
+        min-inline-size: 420px; /* min-width */
         font-size: 1.125rem;
         line-height: 1.5rem;
         font-family: inherit;
         letter-spacing: -0.02em;
         border: none;
         border-radius: 16px;
-        background-color: #e5e4db;
+        background-color: #e6e6e6;
+      }
+
+      .button:focus {
+        outline: none;
+      }
+  
+      .button:focus-visible {
+        outline: 2px solid skyblue;
       }
 
       ::-ms-clear {
-        width: 0;
-        height: 0;
+        inline-size: 0; /* width */
+        block-size: 0; /* height */
       }
 
       input[type="search"]::-webkit-search-decoration,
@@ -125,12 +167,14 @@
         color: #505050;
       }
 
+      
+
 
 
   /* HEADER__USER */
 
   .header__user {
-    margin-left: 32px;
+    margin-inline-start: 32px; /* margin-left */
   }
 
     .header__user-list {
@@ -143,10 +187,10 @@
     }
 
     .header__user-item {
-
     }
 
     .header__user-link {
+      position: relative;
       padding: 12px;
       display: flex;
       color: inherit;
@@ -155,16 +199,79 @@
       line-height: 24px;
       letter-spacing: -0.02em;
       background-color: transparent;
-      transition: background-color .1618s ease;
-    }
+      white-space: nowrap;
+      transition: transform var(--duration) ease, background-color var(--duration) ease-out;
+    }    
 
     .header__user-link:hover {
-      background-color: #ebeae2;
+      background-color: var(--link-hover);
     }
+
+    .tooltip {
+      position: relative;
+    }
+
+    .tooltip::after {
+      content: attr(aria-label);
+      animation-duration: var(--duration);
+      animation-timing-function: ease;
+      animation-delay: 0.1s;
+      animation-fill-mode: forwards;
+      position: absolute;
+      display: none;
+      font-size: 14px;
+      letter-spacing: normal;
+      font-weight: 500;
+      line-height: 1rem;
+      background-color: #fefefe;
+      color: #505050;
+      box-shadow: 0 2px 4px 0 rgba(0 0 0 / 0.08);
+      padding: 12px;
+      border-radius: 16px;
+      inset-block-start: calc(100% + 8px); /* top */
+      opacity: 0;
+
+      /* центрирую элемент относительно родительского */
+      inset-inline-start: 50%; /* left */
+      translate: -50%;
+      /* центрирую элемент относительно родительского */
+
+      transform: translateY(4px);
+    }
+
+    .header__user-link:hover.tooltip::after {
+      display: block;
+      animation-name: tooltip;
+    }
+
+    @keyframes tooltip {
+      100% {
+        opacity: 100;
+        transform: translateY(0);
+      }
+    }
+
+    .header__user-link:focus-visible.tooltip::after {
+      display: block;
+      animation-name: tooltip;
+    }
+
+    
+
+    .header__user-link:focus-visible {
+      outline: 2px solid skyblue;
+    }
+
+    .header__user-link:active {
+      transform: translateY(2px);
+      background-color: #dadada;
+    }
+
+    
 
     .header__user-link--profile {
       padding-block: 0;
-      padding-left: 0;
+      padding-inline-start: 0; /* padding-left */
       gap: 4px;
       align-items: center;
     }
@@ -172,6 +279,29 @@
     .header__user-image {
       border-radius: 14px;
       margin-block: 4px;
-      margin-left: 4px;
-      margin-right: 8px;
+      margin-inline-start: 4px; /* margin-left */
+      margin-inline-end: 8px; /* margin-right */
     }
+
+
+/*------------------------------------*\
+  #A11Y
+\*------------------------------------*/
+
+/* Настройки анимации */
+
+@media (prefers-reduced-motion) {
+  :root {
+    /* --duration: 0.3236s; */
+    --duration: 2s;
+  }
+}
+
+/* Настройки контраста */
+
+@media (prefers-contrast) {
+  :root {
+    --link-hover: lime;
+  }
+}
+

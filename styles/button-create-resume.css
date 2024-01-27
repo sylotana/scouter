@@ -1,0 +1,25 @@
+.button {
+  width: 360px;
+  height: 286px;
+  border: none;
+  border-radius: 16px;
+  background-color: #e5e4db;
+}
+
+.button-create-resume {
+
+  /* fallback */
+  background-image: url('../images/button-create-resume-1x.png');
+  background-image: -webkit-image-set(
+    url('../images/button-create-resume-1x.png') 1x,
+    url('../images/button-create-resume-2x.png') 2x,
+    url('../images/button-create-resume-3x.png') 3x
+  );
+  /* /fallback */
+
+  background-color: image-set(
+    url('../images/button-create-resume-1x.png') 1x,
+    url('../images/button-create-resume-2x.png') 2x,
+    url('../images/button-create-resume-3x.png') 3x
+  );
+}
