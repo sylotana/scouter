@@ -6,7 +6,9 @@
   "scripts": {
     "test": "echo \"Hello, world!\"",
     "check": "prettier --check \"./**/*.{html,css,js}\"",
-    "fix": "prettier --write \"./**/*.{html,css,js}\""
+    "fix": "prettier --write \"./**/*.{html,css,js}\"",
+    "lint": "stylelint \"**/*.css\"",
+    "lintfix": "stylelint \"**/*.css\" --fix"
   },
   "keywords": [],
   "author": "Anatoly Shangin",
