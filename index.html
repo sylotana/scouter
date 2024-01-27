@@ -1,18 +1,21 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
   <head>
     <!-- Метаданные -->
     <meta charset="utf-8" />
     <title>Scouter</title>
-    <meta name="description" content="Application for finding a job, team, and employees." />
+    <meta
+      name="description"
+      content="Application for finding a job, team, and employees."
+    />
 
     <meta name="theme-color" content="#226DAA" />
 
-    
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=1"
+    />
 
-
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
-    
     <!-- Иконки -->
     <!-- <link rel="icon" href="./images/favicon.ico" sizes="any" /> -->
     <link rel="icon" href="./images/icon.svg" type="image/svg+xml" />
@@ -21,43 +24,53 @@
 
     <!-- OG Main -->
     <meta property="og:title" content="Scouter" />
-    <meta property="og:description" content="Application for finding a job, team, and employees." />
+    <meta
+      property="og:description"
+      content="Application for finding a job, team, and employees."
+    />
     <meta property="og:url" content="https://scouter.com" />
     <meta property="og:image" content="./images/og-image.jpg" />
-    <meta property="og:image:alt" content="It looks like you don't have a resume.
-    Create it quickly!" />
-
+    <meta
+      property="og:image:alt"
+      content="It looks like you don't have a resume.
+    Create it quickly!"
+    />
 
     <!-- OG Twitter -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Machine Learning Workshop" />
-    <meta name="twitter:description" content="Application for finding a job, team, and employees." />
-    <meta name="twitter:url" content="https://www.machinelearningworkshop.com/?src=twitter" />
-    <meta name="twitter:image:src" content="http://www.machinelearningworkshop.com/image/all.png" />
+    <meta
+      name="twitter:description"
+      content="Application for finding a job, team, and employees."
+    />
+    <meta
+      name="twitter:url"
+      content="https://www.machinelearningworkshop.com/?src=twitter"
+    />
+    <meta
+      name="twitter:image:src"
+      content="http://www.machinelearningworkshop.com/image/all.png"
+    />
     <meta name="twitter:image:alt" content="27 different home appliances" />
     <meta name="twitter:creator" content="@estellevw" />
     <meta name="twitter:site" content="@perfmattersconf" />
 
     <!-- Версии сайта -->
-    <link rel="canonical" href="https://www.scouter.com">
+    <link rel="canonical" href="https://www.scouter.com" />
     <link rel="alternate" href="https://www.scouter.com/ru/" hreflang="ru-RU" />
 
-
     <!-- Стили -->
-    <link rel="stylesheet" href="styles/fonts/fonts.css">
-    <link rel="stylesheet" href="styles/global.css">
-    <link rel="stylesheet" href="styles/button-create-resume.css">
-
+    <link rel="stylesheet" href="styles/fonts/fonts.css" />
+    <link rel="stylesheet" href="styles/global.css" />
+    <link rel="stylesheet" href="styles/button-create-resume.css" />
   </head>
   <body class="page__body">
-
     <!-- TODO: заменить все теги img с svg на svg теги или другие аналоги -->
-    
+
     <header class="header container" aria-label="Site header">
       <div class="header__container">
-
         <a href="#" class="header__logo">
-          <img src="./images/scouter-logo.svg" alt="Scouter logo">
+          <img src="./images/scouter-logo.svg" alt="Scouter logo" />
         </a>
 
         <nav class="header__nav">
@@ -74,26 +87,54 @@
         <form action="" class="header__search">
           <label for="search-header" class="header__search-label">Search</label>
           <div class="header__search-wrapper">
-            <img src="./images/search.svg" alt="search" class="header__search-icon">
-            <input type="search" id="search-header" class="header__search-input" placeholder="Profession, position or company">
+            <img
+              src="./images/search.svg"
+              alt="search"
+              class="header__search-icon"
+            />
+            <input
+              type="search"
+              id="search-header"
+              class="header__search-input"
+              placeholder="Profession, position or company"
+            />
           </div>
         </form>
 
         <nav class="header__user" aria-label="Block with user navigation">
-          <ul class="header__user-list" aria-label="List of user navigation links">
+          <ul
+            class="header__user-list"
+            aria-label="List of user navigation links"
+          >
             <li class="header__user-item">
-              <a href="#" class="header__user-link tooltip" aria-label="Messages">
-                <img src="./images/messages.svg" alt="" aria-hidden="true">
+              <a
+                href="#"
+                class="header__user-link tooltip"
+                aria-label="Messages"
+              >
+                <img src="./images/messages.svg" alt="" aria-hidden="true" />
               </a>
             </li>
             <li class="header__user-item">
-              <a href="#" class="header__user-link tooltip" aria-label="Favorites">
-                <img src="./images/favorites.svg" alt="" aria-hidden="true">
+              <a
+                href="#"
+                class="header__user-link tooltip"
+                aria-label="Favorites"
+              >
+                <img src="./images/favorites.svg" alt="" aria-hidden="true" />
               </a>
             </li>
             <li class="header__user-item">
-              <a href="#" class="header__user-link tooltip" aria-label="Notifications">
-                <img src="./images/notifications.svg" alt="" aria-hidden="true">
+              <a
+                href="#"
+                class="header__user-link tooltip"
+                aria-label="Notifications"
+              >
+                <img
+                  src="./images/notifications.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
               </a>
             </li>
             <li class="header__user-item">
@@ -119,23 +160,25 @@
                   loading="lazy"
                 />
                 <span>Steve Jobs</span>
-                <img src="./images/arrow-down-20x20.svg" alt="" aria-hidden="true" />
+                <img
+                  src="./images/arrow-down-20x20.svg"
+                  alt=""
+                  aria-hidden="true"
+                />
               </a>
             </li>
           </ul>
         </nav>
-
       </div>
     </header>
-    
+
     <main>
       <button class="button-create-resume button" type="button">
         <div>
-          <img src="" alt="">
+          <img src="" alt="" />
           <span>Create resume</span>
         </div>
       </button>
     </main>
-
   </body>
 </html>
