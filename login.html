@@ -22,7 +22,6 @@
         <legend class="visually-hidden">Your name</legend>
   
         <div class="input">
-          <label class="input__label" for="name">Name</label>
           <input
             class="input__action"
             name="name"
@@ -30,11 +29,12 @@
             type="text"
             minlength="4"
             maxlength="16"
+            placeholder=""
             required
           />
+          <label class="input__label" for="name">Name</label>
         </div>
         <div class="input">
-          <label class="input__label" for="username">Username</label>
           <input
             class="input__action"
             name="username"
@@ -42,55 +42,61 @@
             type="text"
             minlength="4"
             maxlength="16"
+            placeholder=" "
             required
           />
+          <label class="input__label" for="username">Username</label>
         </div>
       </fieldset>
       <fieldset class="form__group form__contact">
         <legend class="visually-hidden">Your contact details</legend>
         <div class="input">
-          <label class="input__label" for="email">Email</label>
           <input
             class="input__action"
             name="email"
             id="email"
             type="email"
+            placeholder=""
             required
           />
+          <label class="input__label" for="email">Email</label>
         </div>
         <div class="input">
-          <label class="input__label" for="phone">Phone number</label>
           <input
             class="input__action"
             name="phone"
             id="phone"
             type="tel"
+            placeholder=""
             required
           />
+          <label class="input__label" for="phone">Phone number</label>
         </div>
       </fieldset>
       <fieldset class="form__group">
         <legend class="visually-hidden">Your password</legend>
         <div class="input">
-          <label class="input__label" for="password">Password</label>
           <input 
             class="input__action"
             name="password"
             id="password"
             type="password"
             minlength="8"
+            placeholder=""
             required
           />
+          <label class="input__label" for="password">Password</label>
         </div>
         <div class="input">
-          <label class="input__label" for="password-confirm">Password confirm</label>
           <input
             class="input__action"
             name="password-confirm"
             id="password-confirm"
             type="password"
+            placeholder=""
             required
           />
+          <label class="input__label" for="password-confirm">Password confirm</label>
         </div>
       </fieldset>
       <button class="button form__submit" type="submit">Create account</button>

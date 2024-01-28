@@ -111,6 +111,7 @@
 }
 
   .input__label {
+    pointer-events: none;
     position: absolute;
     top: 1rem;
     left: 1rem;
@@ -119,12 +120,17 @@
     line-height: 1.5rem;
     letter-spacing: -0.02em;
     color: #636363;
+    transform-origin: left top;
+    transition: transform 0.2427s ease-out;
 
   }
 
   .input__action {
     background-color: #fff;
-    padding: 1rem;
+    padding-inline: 1rem;
+    padding-block-start: 20px;
+    padding-block-end: 12px;
+
     border: 1px solid #d4d4d4;
     border-radius: 1rem;
     font-family: inherit;
@@ -133,6 +139,14 @@
     letter-spacing: -0.02em;
     max-block-size: 56px;
     width: 100%;
+  }
+
+  .input__action:not(:placeholder-shown) ~ .input__label {
+    transform: translateY(-8px) scale(0.6);
+  }
+
+  .input__action:focus ~ .input__label {
+    transform: translateY(-8px) scale(0.6);
   }
 
 .button {
