@@ -1,11 +1,104 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="page">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1">
   <title>Scouter</title>
+  <link rel="stylesheet" href="styles/fonts/fonts.css">
+  <link rel="stylesheet" href="styles/global.css">
+  <link rel="stylesheet" href="styles/login.css">
 </head>
-<body>
+<body class="page__body page__login">
+  <form action="" class="form">
+
+    <div class="form__header">
+      <img class="form__logo" src="./images/scouter-icon.svg" alt="Scouter logo" height="40">
+      <h1 class="form__title">Sign up to Scouter</h1>
+      <p class="form__subtitle">Application for finding a job, team, and employees.</p>
+    </div>
+
+    <div class="form__body">
+      <fieldset class="form__group">
+        <legend class="visually-hidden">Your name</legend>
   
+        <div class="input">
+          <label class="input__label" for="name">Name</label>
+          <input
+            class="input__action"
+            name="name"
+            id="name"
+            type="text"
+            minlength="4"
+            maxlength="16"
+            required
+          />
+        </div>
+        <div class="input">
+          <label class="input__label" for="username">Username</label>
+          <input
+            class="input__action"
+            name="username"
+            id="username"
+            type="text"
+            minlength="4"
+            maxlength="16"
+            required
+          />
+        </div>
+      </fieldset>
+      <fieldset class="form__group form__contact">
+        <legend class="visually-hidden">Your contact details</legend>
+        <div class="input">
+          <label class="input__label" for="email">Email</label>
+          <input
+            class="input__action"
+            name="email"
+            id="email"
+            type="email"
+            required
+          />
+        </div>
+        <div class="input">
+          <label class="input__label" for="phone">Phone number</label>
+          <input
+            class="input__action"
+            name="phone"
+            id="phone"
+            type="tel"
+            required
+          />
+        </div>
+      </fieldset>
+      <fieldset class="form__group">
+        <legend class="visually-hidden">Your password</legend>
+        <div class="input">
+          <label class="input__label" for="password">Password</label>
+          <input 
+            class="input__action"
+            name="password"
+            id="password"
+            type="password"
+            minlength="8"
+            required
+          />
+        </div>
+        <div class="input">
+          <label class="input__label" for="password-confirm">Password confirm</label>
+          <input
+            class="input__action"
+            name="password-confirm"
+            id="password-confirm"
+            type="password"
+            required
+          />
+        </div>
+      </fieldset>
+      <button class="button form__submit" type="submit">Create account</button>
+    </div>
+    <div class="form__footer">
+      <p class="form__question">Already have an account?<a class="form__link" href="">Sign in</a></p>
+    </div>
+    
+  </form>
 </body>
 </html>

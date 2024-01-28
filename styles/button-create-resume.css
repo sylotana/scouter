@@ -17,7 +17,7 @@
   );
   /* /fallback */
 
-  background-color: image-set(
+  background-image: image-set(
     url('../images/button-create-resume-1x.png') 1x,
     url('../images/button-create-resume-2x.png') 2x,
     url('../images/button-create-resume-3x.png') 3x
